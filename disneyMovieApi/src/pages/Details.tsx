@@ -26,7 +26,6 @@ export default function Details() {
     <div className="bg-primary min-h-screen p-10 grid place-items-center">
       <h1 className="text-2xl font-bold text-center mt-10">{character.name}</h1>
       <img src={character.imageUrl} alt={character.name} className="w-64 h-auto mb-4 mt-4" />
-      <p className="text-center"><strong>Descrição:</strong> {character.description || "Descrição não disponível."}</p>
       <p className="text-center"><strong>Filmes:</strong> {character.films.join(', ')}</p>
     </div>
   );
