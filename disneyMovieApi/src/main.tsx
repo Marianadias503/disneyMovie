@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom"; // ⬅️ O Router deve ficar aqui
 import App from "./App";
 import '../src/index.css'
+
+
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>

@@ -1,42 +1,30 @@
-import imgCard from '../assets/imgcard.png';
+import { useNavigate } from "react-router-dom";
 
-export default function Card() {
+type CardProps = {
+  id: string;
+  title: string;
+  image: string;
+};
+
+export default function Card({ id, title, image }: CardProps) {
+  const navigate = useNavigate();
+
   return (
-    <div className="grid grid-cols-3 gap-4 m-10 p-10 justify-items-center h-auto mb-0 mt-0" >
-      {/* Card 1 */}
-      <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg ">
-        <img src={imgCard} alt="divertidamente" className="w-28 mb-4" />
-        <button className="bg-blue-500 text-white  p-1 rounded-lg">Divertidamente </button>
-      </div>
-
-      {/* Card 2 */}
-      <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
-        <img src={imgCard} alt="divertidamente" className="w-28 mb-4" />
-        <button className="bg-blue-500 text-white  p-1 rounded-lg">Divertidamente</button>
-      </div>
-
-      {/* Card 3 */}
-      <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
-        <img src={imgCard} alt="divertidamente" className="w-28 mb-4" />
-        <button className="bg-blue-500 text-white p-1 rounded-lg">Divertidamente</button>
-      </div>
-
-      {/* Card 4 */}
-      <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
-        <img src={imgCard} alt="divertidamente" className="w-28 mb-4" />
-        <button className="bg-blue-500 text-white  p-1rounded-lg">Divertidamente</button>
-      </div>
-
-      {/* Card 5 */}
-      <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
-        <img src={imgCard} alt="divertidamente" className="w-28 mb-4" />
-        <button className="bg-blue-500 text-white  p-1 rounded-lg">Divertidamente</button>
-      </div>
-
-      {/* Card 6 */}
-      <div className="flex flex-col items-center p-4 border border-gray-300 rounded-lg">
-        <img src={imgCard} alt="divertidamente" className="w-28 mb-4" />
-        <button className="bg-blue-500 text-white p p-1 rounded-lg">Divertidamente</button>
+    <div className="flex flex-col items-center p-10 w-full">
+      <div className="border border-gray-300 rounded-lg shadow-md overflow-hidden h-64"> {/* Altura fixa para os cards */}
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-40 object-cover mb-4" 
+        />
+        <div className="p-2">
+          <button 
+            className="bg-blue-500 text-white p-2 rounded-lg w-full hover:bg-blue-600 transition"
+            onClick={() => navigate(`/details/${id}`)}
+          >
+            {title}
+          </button>
+        </div>
       </div>
     </div>
   );
