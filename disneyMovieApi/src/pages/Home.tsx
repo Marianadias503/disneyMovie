@@ -33,7 +33,7 @@ export default function Home() {
           </h1>
           <p className="text-white">
             Uma plataforma para acompanhar todos os personagens da Disney, com a descrição de cada um em um único lugar.
-            Faça seu login para ver a exibição completa e a descrição.
+            Clique para ver todos os personagens .
           </p>
           <button 
             className="bg-white text-[#401EFF] rounded-2xl w-1/2"
