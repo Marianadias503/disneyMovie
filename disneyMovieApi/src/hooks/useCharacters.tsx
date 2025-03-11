@@ -1,7 +1,7 @@
 // src/hooks/useDisneyCharacters.ts
 import { useEffect, useState } from 'react';
-import api from '../api/api';
 import imgDisney from '../assets/imgDisney.png';
+import { api } from '../api/api';
 
 // Criando uma interface para os personagens
 interface Character {
